@@ -22,6 +22,11 @@
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
         }
+
+        public override string ToString()
+        {
+            return $"{x}, {y}, {sym}";
+        }
     }
 }
 

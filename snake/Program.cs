@@ -12,60 +12,33 @@
             Point p2 = new(4, 5, '#');
             p2.Draw();
 
-            Console.WriteLine($"Point p1 = ({p1.x}, {p1.y}, {p1.sym})");
-            Console.WriteLine($"Point p2 = ({p2.x}, {p2.y}, {p2.sym})");
+            List<int> numList = new(); // new List<int>();
+            numList.Add(0);
+            numList.Add(1);
+            numList.Add(2);
 
-            p1 = p2;
-            Console.WriteLine($"After p1 = p2 \n p1 -> ({p1.x}, {p1.y}, {p1.sym}) \n p2 = ({p2.x}, {p2.y}, {p2.sym})");
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
 
-            int x = 1;
-            Func1(x);
+            foreach(int i in numList)
+            {
+                Console.WriteLine(i);
+            }
 
-            Func2(x);
+            numList.RemoveAt(0);
 
-            Func3(x);
+            List<Point> plist = new List<Point>();
+            plist.Add(p1);
+            plist.Add(p2);
 
-            Move(p2, 10, 10);
-            Console.WriteLine($"After p2 move \n p1 -> ({p1.x}, {p1.y}, {p1.sym}) \n p2 = ({p2.x}, {p2.y}, {p2.sym})");
+            foreach (Point i in plist)
+            {
+                Console.WriteLine(i);
+            }
 
-            p2.x++;
-            p2.y++;
-            Console.WriteLine($"After p2++ \n p1 -> ({p1.x}, {p1.y}, {p1.sym}) \n p2 = ({p2.x}, {p2.y}, {p2.sym})");
-
-            Reset(p2);
-            Console.WriteLine($"After p2 reset \n p1 -> ({p1.x}, {p1.y}, {p1.sym}) \n p2 = ({p2.x}, {p2.y}, {p2.sym}))");
 
             Console.ReadLine();
-        }
-
-        private static void Reset(Point p)
-        {
-            p = new();
-            Console.WriteLine($"p = ({ p.x}, { p.y}, { p.sym})");
-        }
-
-        private static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y += dy;
-
-        }
-
-        private static void Func1(int x)
-        {
-            Console.WriteLine($"Func1 x = {x}");
-        }
-
-        private static void Func2(int x)
-        {
-            x++;
-            Console.WriteLine($"Func2 x = {x}");
-        }
-
-        private static void Func3(int x)
-        {
-            ++x;
-            Console.WriteLine($"Func3 x = {x}");
         }
     }
 }
