@@ -4,22 +4,21 @@
     {
         static void Main(string[] args)
         {
+            //Console.SetBufferSize(80, 25);
 
-            Point p1 = new(1, 3, '*');
-            p1.Draw();
+            // frame rendering
+            HorizontalLine upLine = new HorizontalLine(0, 9, 0, '+');
+            HorizontalLine downLine = new HorizontalLine(0, 9, 9, '+');
+            VerticalLine leftLine = new VerticalLine(0, 9, 0, '+');
+            VerticalLine rightLine = new VerticalLine(0, 9, 9, '+');
+            upLine.Draw();
+            downLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
 
-
-            Point p2 = new(4, 5, '#');
-            p2.Draw();
-
-            HorizontalLine hline = new HorizontalLine(5, 10, 8, '+');
-            hline.Draw();
-
-            VerticalLine vLine = new VerticalLine(4, 9, 14, '^');
-            vLine.Draw();
-
-
-            Console.ReadLine();
+            // point rendering
+            Point p = new Point(4, 5, '*');
+            p.Draw();
         }
     }
 }
