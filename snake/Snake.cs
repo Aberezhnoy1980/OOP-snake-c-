@@ -5,6 +5,11 @@ namespace snake
     {
         Direction direction;
 
+        public void SetDirection(Direction direction)
+        {
+            this.direction = direction;
+        }
+
         public Snake(Point tail, int length, Direction direction)
         {
             this.direction = direction;
@@ -34,6 +39,18 @@ namespace snake
             Point nextPoint = new Point(head);
             nextPoint.Move(1, direction);
             return nextPoint;
+        }
+
+        public void HandlerKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
         }
     }
 }
