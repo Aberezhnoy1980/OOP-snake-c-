@@ -19,6 +19,14 @@
             // point rendering
             Point p = new Point(4, 5, '*');
             p.Draw();
+
+            Emploee e = new Emploee();
+
+            e.name = "Olek";
+            e.age = 42;
+            e.pay = 300000;
+
+            Console.WriteLine(e);
         }
     }
 }
